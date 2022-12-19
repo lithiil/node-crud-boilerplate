@@ -12,7 +12,7 @@ function createUser(req, res) {
   User.findOne({ email: email }).then((user) => {
     if (user) {
       console.log(`User already exists with details: ${user}`);
-      res.json({ status: "email already exists", userDetails: user });
+      res.json({ status: "user already exists", userDetails: user });
     } else {
       const newUser = new User({
         name,
